@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SettingsViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *billAmount;
@@ -14,32 +15,26 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalAmount;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipPercent;
 
-- (IBAction)onTap:(id)sender;
-- (IBAction)onEdit:(id)sender;
+-(IBAction)onTap:(id)sender;
 
 -(void)updateValues;
+-(void)onSettingsButton;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger percentIndex = [defaults integerForKey:@"percent index"];
+    NSLog(@"Trying to set percentIndex to %li", (long)percentIndex);
+    self.tipPercent.selectedSegmentIndex = percentIndex;
 }
 
 - (IBAction)onTap:(id)sender {
     [self.view endEditing:YES];
     [self updateValues];
-}
-
-- (IBAction)onEdit:(id)sender {
-    // Change settings button to "Done"
 }
 
 -(void)updateValues {
@@ -52,6 +47,10 @@
     
     self.tipAmount.text = [NSString stringWithFormat:@"$%0.2f", tip];
     self.totalAmount.text = [NSString stringWithFormat:@"$%0.2f", total];
+}
+
+-(void)onSettingsButton {
+    [self.navigationController pushViewController:[[SettingsViewController alloc] init] animated:YES];
 }
 
 @end
