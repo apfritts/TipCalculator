@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipPercent;
 
 -(IBAction)onTap:(id)sender;
+-(IBAction)onEdit:(id)sender;
 
 -(void)updateValues;
 -(void)onSettingsButton;
@@ -35,6 +36,10 @@
 - (IBAction)onTap:(id)sender {
     [self.view endEditing:YES];
     [self updateValues];
+}
+
+- (IBAction)onEdit:(id)sender {
+    NSLog(@"New value: %@", self.billAmount.text);
 }
 
 -(void)updateValues {
