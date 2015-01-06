@@ -24,4 +24,4 @@ This project was created using XCode 6.2 Beta targetting iOS 8.0. I tried to tar
 Acknowledgement
 ---------------
 
-No libraries were used while making this project. Thank you to all the lovely folks on StackOverflow who had already answered all of my questions and to @timothy1ee for the iOS intro video.
+No libraries were used while making this project. Thank you to all the lovely folks on StackOverflow who had already answered all of my questions and to @timothy1ee for the iOS intro video. Screencast created with [LiceCap](http://www.cockos.com/licecap/).
