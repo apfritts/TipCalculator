@@ -13,9 +13,8 @@ Required Stories:
 Optional Stories:
 
 - I don't think there were any. I did play with the Storyboard and constraints so it shows up reasonably on a variety of devices.
-- 
 
-<img src="https://raw.githubusercontent.com/apfritts/TipCalculator/master/Screencast.gif" border="0" />
+<img src="https://github.com/apfritts/TipCalculator/raw/master/Screencast.gif" border="0" />
 
 Installation Instructions
 -------------------------
